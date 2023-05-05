@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar artrópodo</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('node_modules/flowbite/dist/flowbite.js')
+
+</head>
+<body class="fondo">
+@include('layouts.navigation')
+<div class="fondo m-10">
+
+    <div>
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="md:col-span-1">
+                <div class="px-4 sm:px-0">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">Registro de artrópodo</h3>
+                    <p class="mt-1 text-sm text-gray-600">Ingresa la información solicitada a continuación para el registro del artrópodo.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <form action="{{route('artropodo.store')}}" method="POST" enctype="multipart/form-data">
+
+        @csrf
+
+        <div class="mt-2 shadow sm:overflow-hidden sm:rounded-md">
+
+            <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+
+                <x-input name="nombreComun" message="Nombre común"></x-input>
+
+                <x-input name="nombreCientifico" message="Nombre Científico"></x-input>
+
+                <x-input name="clasificacion" message="Clasificación"></x-input>
+
+                <x-input name="habitat" message="Hábitat"></x-input>
+
+                <x-input name="distribucionGeografica" message="Distribución geográfica"></x-input>
+                {{--
+                <button id="btn-add" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Icon description</span>
+                </button>
+
+                <div class="li-container">
+                    <ul>
+
+                    </ul>
+                </div>
+                --}}
+                <x-input name="color" message="Color"></x-input>
+
+                <x-input name="peligroso" message="Peligroso"></x-input>
+
+                <x-input name="patas" message="Número de patas"></x-input>
+
+                <div class="hidden sm:block" aria-hidden="true">
+                    <div class="py-5">
+                        <div class="border-t border-gray-200"></div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:grid grid-cols-6 gap-4">
+
+                    <div class="block md:col-start-1">
+                        <label for="file" class="block text-sm font-bold text-gray-700">Imagen</label>
+                    </div>
+
+                    <div class="block mt-3 md:col-start-3 col-end-6">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Elige la imagen</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file" type="file" name="file" accept="image/*">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG</p>
+
+                    </div>
+
+                </div>
+
+                <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancelar</button>
+
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Registrar</button>
+
+            </div>
+
+        </div>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
