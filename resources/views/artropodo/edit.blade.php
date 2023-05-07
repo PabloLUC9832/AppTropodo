@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @vite('node_modules/flowbite/dist/flowbite.js')
+    {{--@vite('node_modules/flowbite/dist/flowbite.js')--}}
 
 </head>
 <body class="fondo">
