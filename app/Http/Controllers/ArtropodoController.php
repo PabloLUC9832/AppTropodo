@@ -61,7 +61,7 @@ class ArtropodoController extends Controller
         */
         $artropodo->save();
 
-        return redirect()->route('artropodo.create');
+        return redirect()->route('artropodo.index');
 
     }
 
