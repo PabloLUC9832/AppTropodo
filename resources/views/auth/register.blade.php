@@ -16,9 +16,23 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Matricula -->
+        <div class="mt-4">
+            <x-input-label for="matricula" :value="__('Matrícula')" />
+            <x-text-input id="matricula" class="block mt-1 w-full" type="text" name="matricula" :value="old('matricula')" required/>
+            <x-input-error :messages="$errors->get('matricula')" class="mt-2" />
+        </div>
+
+        <!-- Rol -->
+        <div class="mt-4">
+            <x-input-label for="rol" :value="__('Rol')" />
+            <x-text-input id="rol" class="block mt-1 w-full" type="text" name="rol" :value="old('rol')" required/>
+            <x-input-error :messages="$errors->get('rol')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Contraeña')" />
+            <x-input-label for="password" :value="__('Contraseña')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
