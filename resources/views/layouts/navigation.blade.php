@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('artropodo.index')" :active="request()->routeIs('artropodo.index')">
                         {{ __('Artrópodos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('artropodo.clasificaciones')" :active="request()->routeIs('artropodo.clasificaciones')">
+                        {{ __('Clasificaciones') }}
+                    </x-nav-link>
                 </div>
             </div>
 

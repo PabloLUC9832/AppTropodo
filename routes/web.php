@@ -37,6 +37,8 @@ Route::controller(ArtropodoController::class)->group(function (){
 
         Route::get('/artropodo',  'index')->name('index');
 
+        Route::get('/artropodo/clasificaciones',  'clasificacion')->name('clasificaciones');
+
         Route::get('/artropodo/create',  'create')->name('create');
         Route::post('/artropodo',  'store')->name('store');
 

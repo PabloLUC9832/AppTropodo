@@ -145,4 +145,11 @@ class ArtropodoController extends Controller
         $artropodo->delete($id);
         return redirect()->route('artropodo.index');
     }
+
+    public function clasificacion()
+    {
+        return view('artropodo.clasificaciones');
+    }
+
+
 }
