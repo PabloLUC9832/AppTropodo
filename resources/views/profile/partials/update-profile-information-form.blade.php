@@ -47,6 +47,18 @@
             @endif
         </div>
 
+        <div>
+            <x-input-label for="matricula" :value="__('Matrícula')" />
+            <x-text-input id="matricula" name="matricula" type="text" class="mt-1 block w-full" :value="old('matricula', $user->matricula)" required autofocus />
+            <x-input-error class="mt-2" :messages="$errors->get('matricula')" />
+        </div>
+
+        <div>
+            <x-input-label for="matricula" :value="__('Rol')" />
+            <x-text-input id="rol" name="rol" type="text" class="mt-1 block w-full" :value="old('rol', $user->rol)" required autofocus />
+            <x-input-error class="mt-2" :messages="$errors->get('rol')" />
+        </div>
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Guardar') }}</x-primary-button>
 
@@ -57,7 +69,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Guardado.') }}</p>
             @endif
         </div>
     </form>
