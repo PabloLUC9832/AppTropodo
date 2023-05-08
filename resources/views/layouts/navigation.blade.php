@@ -76,6 +76,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Inicio') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('artropodo.index')" :active="request()->routeIs('artropodo.index')">
+                {{ __('Artrópodos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('artropodo.clasificaciones')" :active="request()->routeIs('artropodo.clasificaciones')">
+                {{ __('Clasificaciones') }}
+            </x-responsive-nav-link>            
         </div>
 
         <!-- Responsive Settings Options -->
