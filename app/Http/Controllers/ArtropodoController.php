@@ -6,8 +6,6 @@ use App\Models\Artropodo;
 use App\Http\Requests\StoreArtropodoRequest;
 use App\Http\Requests\UpdateArtropodoRequest;
 use Illuminate\Support\Facades\DB;
-use function Ramsey\Uuid\v1;
-
 class ArtropodoController extends Controller
 {
     /**
