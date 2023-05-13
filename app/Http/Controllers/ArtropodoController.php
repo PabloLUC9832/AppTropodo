@@ -5,22 +5,56 @@ namespace App\Http\Controllers;
 use App\Models\Artropodo;
 use App\Http\Requests\StoreArtropodoRequest;
 use App\Http\Requests\UpdateArtropodoRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use function Ramsey\Uuid\v1;
-
 class ArtropodoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = trim($request->get('search'));
+        $clasificacion = trim($request->get('clasificacion'));
+        $peligroso = trim($request->get('peligroso'));
 
         $artropodos = DB::table('artropodos')
                       ->get()
                       ;
 
-        return view('artropodo.index',compact('artropodos'));
+        if (isset($clasificacion) || isset($peligroso)){
+
+        $artropodos = DB::table('artropodos')
+                      ->when($peligroso == "Sí", function ($query) use ($clasificacion,$peligroso,$search){
+                          $query->where('clasificacion', $clasificacion)
+                                ->where('peligroso', 'Sí')
+                                ->where(function ($query) use($search){
+                                   $query->where('nombre_comun','LIKE','%'.$search.'%')
+                                         ->orWhere('nombre_cientifico','LIKE','%'.$search.'%')
+                                         ;
+                                })
+
+                          ;
+
+                      })
+                      ->when($peligroso == "No", function ($query) use ($clasificacion,$peligroso,$search){
+                          $query->where('clasificacion', $clasificacion)
+                                ->where('peligroso', 'No')
+                                ->where(function ($query) use($search){
+                                      $query->where('nombre_comun','LIKE','%'.$search.'%')
+                                          ->orWhere('nombre_cientifico','LIKE','%'.$search.'%')
+                                      ;
+                                  })
+                          ;
+                      })
+                      ->get();
+
+
+        }
+
+
+
+        return view('artropodo.index',compact('artropodos','search'));
     }
 
     /**

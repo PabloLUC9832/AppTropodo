@@ -42,6 +42,59 @@
         </div>
     </div>
 
+    <form action="{{ route('artropodo.index') }}" method="GET" value="{{$search}}">
+
+        <div class="flex sm:rounded-lg md:mt-5 md:mx-10 md:my-0">
+
+            <div class="w-2/4 sm:w-full">
+                <label for="clasificacion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Clasificación</label>
+                <select  id="clasificacion" name="clasificacion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                    <option value="">Selecciona la clasificación</option>
+                    <option value="Unirrámeos">Unirrámeos</option>
+                    <option value="Crustáceos">Crustáceos</option>
+                    <option value="Quelicerados">Quelicerados</option>
+                    <option value="Trilobitomorfos">Trilobitomorfos</option>
+
+                </select>
+            </div>
+
+            <div class="w-2/4 ml-8">
+                <label for="peligroso" class="block mb-2 text-sm  text-gray-900 dark:text-gray-400" >Peligroso</label>
+                <select id="peligroso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="peligroso">
+
+                    <option value=""> Selecciono si es peligroso</option>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="flex sm:rounded-lg md:mt-5 md:mx-10 md:my-0">
+            <div class="w-11/12">
+                {{--<input type="search" id="search-dropdown" class=" p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50
+            border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Ingresa tu búsqueda" name="search">--}}
+                <input type="search" id="search-dropdown" class=" rounded-lg p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Búsqueda por nombre común o nombre científico" name="search">
+            </div>
+
+            <div class="w-1/12">
+                <button type="submit" class=" text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mt-0 ml-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
+            </div>
+
+
+        </div>
+
+    </form>
+
+
+
+    <div class="hidden sm:block" aria-hidden="true">
+        <div class="py-5">
+            <div class="border-t border-gray-200"></div>
+        </div>
+    </div>
+
     <div class="md:grid md:grid-cols-4 md:gap-6">
 
         @if(count($artropodos) <= 0)

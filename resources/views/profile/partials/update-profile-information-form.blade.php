@@ -53,10 +53,13 @@
             <x-input-error class="mt-2" :messages="$errors->get('matricula')" />
         </div>
 
-        <div>
-            <x-input-label for="matricula" :value="__('Rol')" />
-            <x-text-input id="rol" name="rol" type="text" class="mt-1 block w-full" :value="old('rol', $user->rol)" required autofocus />
-            <x-input-error class="mt-2" :messages="$errors->get('rol')" />
+        <div class="mt-4">
+            <label for="rol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Rol</label>
+            <select  id="rol" name="rol" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="{{$user->rol}}">{{$user->rol}}</option>
+                <option value="Estudiante">Estudiante</option>
+                <option value="Experto">Experto</option>
+            </select>
         </div>
 
         <div class="flex items-center gap-4">
