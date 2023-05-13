@@ -41,10 +41,6 @@
 
                 <x-input name="nombreCientifico" message="Nombre Científico" value="{{$artropodo->nombre_cientifico}}"></x-input>
 
-                {{--
-                <x-input name="clasificacion" message="Clasificación" value="{{$artropodo->clasificacion}}"></x-input>
-                --}}
-
                 <div class="col-span-6 md:grid grid-cols-6 gap-4">
 
                     <div class="block md:col-start-1">
@@ -69,9 +65,26 @@
 
                 <x-input name="color" message="Color" value="{{$artropodo->color}}"></x-input>
 
+                {{--
                 <x-input name="peligroso" message="Peligroso" value="{{$artropodo->peligroso}}"></x-input>
+                --}}
+                <div class="col-span-6 md:grid grid-cols-6 gap-4">
 
-                <x-input name="patas" message="Número de patas" value="{{$artropodo->patas}}"></x-input>
+                    <div class="block md:col-start-1">
+                        <label for="peligroso" class="block text-sm font-bold text-gray-700">Peligroso</label>
+                    </div>
+
+                    <div class="block mt-3 md:col-start-3 col-end-6">
+                        <select  id="peligroso" name="peligroso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                            <option value="{{$artropodo->peligroso}}">{{$artropodo->peligroso}}</option>
+                            <option value="Sí">Sí</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <x-input name="patas" message="Número de patas" value="{{$artropodo->patas}}" type="number"></x-input>
 
                 <div class="hidden sm:block" aria-hidden="true">
                     <div class="py-5">

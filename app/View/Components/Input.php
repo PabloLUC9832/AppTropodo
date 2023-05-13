@@ -15,11 +15,14 @@ class Input extends Component
     public $message;
     public $value;
 
-    public function __construct($name,$message,$value="")
+    public $type;
+
+    public function __construct($name,$message,$value="",$type="text")
     {
         $this->name = $name;
         $this->message = $message;
         $this->value = $value;
+        $this->type = $type;
     }
 
     /**
