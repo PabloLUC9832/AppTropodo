@@ -41,7 +41,27 @@
 
                 <x-input name="nombreCientifico" message="Nombre Científico" value="{{$artropodo->nombre_cientifico}}"></x-input>
 
+                {{--
                 <x-input name="clasificacion" message="Clasificación" value="{{$artropodo->clasificacion}}"></x-input>
+                --}}
+
+                <div class="col-span-6 md:grid grid-cols-6 gap-4">
+
+                    <div class="block md:col-start-1">
+                        <label for="clasificacion" class="block text-sm font-bold text-gray-700">Clasificación</label>
+                    </div>
+
+                    <div class="block mt-3 md:col-start-3 col-end-6">
+                        <select  id="clasificacion" name="clasificacion" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                            <option value="{{$artropodo->clasificacion}}">{{$artropodo->clasificacion}}</option>
+                            <option value="Unirrámeos">Unirrámeos</option>
+                            <option value="Crustáceos">Crustáceos</option>
+                            <option value="Quelicerados">Quelicerados</option>
+                            <option value="Trilobitomorfos">Trilobitomorfos</option>
+                        </select>
+                    </div>
+
+                </div>
 
                 <x-input name="habitat" message="Hábitat" value="{{$artropodo->habitat}}"></x-input>
 

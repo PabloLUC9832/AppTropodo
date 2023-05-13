@@ -24,13 +24,6 @@
         </div>
 
         <!-- Rol -->
-        {{--
-        <div class="mt-4">
-            <x-input-label for="rol" :value="__('Rol')" />
-            <x-text-input id="rol" class="block mt-1 w-full" type="text" name="rol" :value="old('rol')" required/>
-            <x-input-error :messages="$errors->get('rol')" class="mt-2" />
-        </div>
-        --}}
         <div class="mt-4">
             <label for="rol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Rol</label>
             <select  id="rol" name="rol" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
