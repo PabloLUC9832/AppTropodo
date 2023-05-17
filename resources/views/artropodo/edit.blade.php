@@ -84,7 +84,7 @@
 
                 </div>
 
-                <x-input name="patas" message="Número de patas" value="{{$artropodo->patas}}" type="number"></x-input>
+                <x-input name="patas" message="Número de patas" value="{{$artropodo->patas}}" type="text"></x-input>
 
                 <div class="hidden sm:block" aria-hidden="true">
                     <div class="py-5">

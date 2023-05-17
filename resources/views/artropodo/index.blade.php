@@ -110,7 +110,7 @@
             @foreach($artropodos as $artropodo)
 
                 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src="https://desarrollointeracciones.blob.core.windows.net/files/{{$artropodo->foto}}" alt="{{ $artropodo->nombre_comun }}">
+                    <img class="w-full" src="https://apptropodo.blob.core.windows.net/apptropodo/{{$artropodo->foto}}" alt="{{ $artropodo->nombre_comun }}">
                     <div class="px-6 py-4">
 
                         <h4 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $artropodo->nombre_comun }}</h4>
